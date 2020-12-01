@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar color="light">
+        <ion-title>
+            Profile
+        </ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form #form="ngForm" (ngSubmit)="register(form)">
+        <ion-grid>
+            <ion-row justify-content-center>
+                <ion-col align-self-center size-md="6" size-lg="4" size-xs="12">
+                    <div text-center>
+                        <h3>Enter Your Details!</h3>
+                    </div>
+                    <div padding>
+                        <ion-item>
+                            <ion-input name="shipping" type="text" placeholder="Shipping Address" ngModel required></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input name="phone" type="number" placeholder="Phone Number" ngModel required></ion-input>
+                        </ion-item>
+                    </div>
+                    <div padding>
+                        <ion-button class="mt-3" size="medium" type="submit" [disabled]="form.invalid">Save</ion-button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+</ion-content>

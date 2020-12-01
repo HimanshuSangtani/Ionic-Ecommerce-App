@@ -1,0 +1,8 @@
+{
+  "name": "b2c-ecommerce-app",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

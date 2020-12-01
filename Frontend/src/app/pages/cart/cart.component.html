@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar color="light">
+        <ion-card-title>
+            Cart
+        </ion-card-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-card *ngFor="let p of cart">
+            <ion-card-header>
+                <ion-card-title>{{ p.title }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row class="ion-align-items-center">
+                    <ion-col size="8">
+                        <ion-label color="secondary">
+                            <b>{{p.price}}</b>
+                        </ion-label>
+                    </ion-col>
+                    <ion-col size="4" class="ion-text-right">
+                        <ion-button fill="clear" (click)="decreaseCartItem(p)">
+                            <ion-icon name="remove-outline"></ion-icon>
+                        </ion-button>
+                        <ion-button fill="clear" (click)="addToCart(p)">
+                            <ion-icon name="add"></ion-icon>
+                        </ion-button>
+                        <ion-button fill="clear" (click)="removeCartItem(p)">
+                            <ion-icon name="trash"></ion-icon>
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+    </ion-list>
+</ion-content>

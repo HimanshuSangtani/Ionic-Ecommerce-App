@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button autoHide="false" class="ion-margin-end"></ion-menu-button>
+            <ion-button>
+                <ion-icon slot="icon-only" name="search"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="end">
+            <ion-button routerLink='cart'>
+                <ion-icon slot="icon-only" name="cart"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="end">
+            <ion-button routerLink='login' color="primary">
+                <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+
+</ion-header>
+<ion-content>
+    <ng-container *ngIf="products">
+        <ion-list *ngFor="let product of products">
+            <ion-item href="/home/{{product.id}}" detail>
+                <ion-thumbnail class="ion-margin-end">
+                    <ion-img src="{{product.image}}"></ion-img>
+                </ion-thumbnail>
+                <ion-label class="ion-text-wrap">{{product.name}}</ion-label>
+                <ion-label>{{product.price}}</ion-label>
+            </ion-item>
+            <ion-button shape="round" (click)="increaseCartItem(product)" size="small" id="btn">+ Add to Cart</ion-button>
+        </ion-list>
+    </ng-container>
+</ion-content>

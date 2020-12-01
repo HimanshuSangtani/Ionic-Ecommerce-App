@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar color="light">
+        <ion-title>
+            Stores Available
+        </ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<div class="container">
+    <table class="table table-borderless mt-3 sm-12 md-6 lg-5">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">City</th>
+                <th scope="col">Store Name</th>
+            </tr>
+        </thead>
+        <tbody class="body">
+            <tr *ngFor="let data of DataArray; let i=index" (click)="storeDetails(data)">
+                <th scope="row">{{i+1}}</th>
+                <td>{{data.address.city}}</td>
+                <td>{{data.company.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

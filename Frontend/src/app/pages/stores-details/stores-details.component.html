@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar color="light">
+        <ion-title>
+            Store Details
+        </ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-list class="mt-auto" color="light">
+        <ion-item>
+            <ion-label>Name: {{storeData.name}}</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Website: {{storeData.website}}</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Email: {{storeData.email}}</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Address: {{storeData.address.street}}</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Phone no: {{storeData.phone}}</ion-label>
+        </ion-item>
+    </ion-list>
+</ion-header>
